@@ -1,8 +1,14 @@
-<form action="">
-    <label> Title:</label><input [ngClass]="article.title=='321' ? 'bg-success': 'bg-danger'"
-        class="form-control"
-        type="text" required minlength="10" maxlength="50" [(ngModel)]="article.title">
-    <br>
+<form #studentForm="ngForm" (ngSubmit)="sendForm()">
+    <div class="form-group">
+        <label> Title: </label>
+        <input class="form-control" 
+            type="text" 
+            required 
+            [(ngModel)]="article.title" 
+            name="title" 
+            #title="ngModel"
+            [ngClass]="title.valid ? '': 'bg-danger'">
+    </div>
     <label> Subtitle: <input type="text" required minlength="10" maxlength="50" [(ngModel)]="article.subtitle"></label><br>
     <label> Body: <textarea [(ngModel)]="article.body"></textarea></label><br>
     <label> Abstract: <input type="text" required minlength="10" [(ngModel)]="article.abstract"></label><br>
@@ -13,5 +19,15 @@
             <option value="Economy">Economy</option>
         </select>
     </label>
-
 </form>
+
+<div class="article-preview">
+    <h2>Article preview</h2>
+    <p>
+        Title: {{article.title}} <br>
+        Subtitle: {{article.subtitle}} <br>
+        Body: {{article.body}} <br>
+        Abstract: {{article.abstract}} <br>
+        Category: {{article.category}} <br>
+    </p>
+</div>
