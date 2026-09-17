@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {Article} from '../interfaces/article';
 import { NgClass } from '@angular/common';
+import { Highlight } from '../directives/highlight';
 
 @Component({
   imports: [FormsModule, NgClass, Highlight],
