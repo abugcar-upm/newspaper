@@ -17,7 +17,7 @@ export class ArticlesList {
 
   ngOnInit(): void {
     this.article = {
-      title: 'title',
+      title: '',
       subtitle: '',
       body: '',
       abstract: '',
@@ -26,6 +26,6 @@ export class ArticlesList {
   }
 
   sendForm(): void {
-    window.alert("Received information: " + this.article.title + " " + this.article.subtitle);
+    window.alert("Received information: " + this.article.title + " " + this.article.subtitle + " " + this.article.body);
   }
 }
