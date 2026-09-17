@@ -11,7 +11,10 @@ export class Highlight {
   onFocus() {
     this.highlight('yellow');
   }
-
+@HostListener('blur')
+onBlur() {
+  this.highlight('white');
+}
   private highlight(color: string) {
     this.el.nativeElement.style.backgroundColor = color;
   }
