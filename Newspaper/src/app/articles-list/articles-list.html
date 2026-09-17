@@ -1,1 +1,17 @@
-<p>articles-list works!</p>
+<form action="">
+    <label> Title:</label><input [ngClass]="article.title=='321' ? 'bg-success': 'bg-danger'"
+        class="form-control"
+        type="text" required minlength="10" maxlength="50" [(ngModel)]="article.title">
+    <br>
+    <label> Subtitle: <input type="text" required minlength="10" maxlength="50" [(ngModel)]="article.subtitle"></label><br>
+    <label> Body: <textarea [(ngModel)]="article.body"></textarea></label><br>
+    <label> Abstract: <input type="text" required minlength="10" [(ngModel)]="article.abstract"></label><br>
+    <label> Category: <select [(ngModel)]="article.category">
+            <option value="National">National</option>
+            <option value="International">International</option>
+            <option value="Sports">Sports</option>
+            <option value="Economy">Economy</option>
+        </select>
+    </label>
+
+</form>
