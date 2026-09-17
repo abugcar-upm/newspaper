@@ -4,7 +4,7 @@ import {Article} from '../interfaces/article';
 import { NgClass } from '@angular/common';
 
 @Component({
-  imports: [FormsModule, NgClass],
+  imports: [FormsModule, NgClass, Highlight],
   selector: 'app-articles-list',
   styleUrl: './articles-list.css',
   templateUrl: './articles-list.html',
