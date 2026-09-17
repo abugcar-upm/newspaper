@@ -3,5 +3,5 @@ export interface Article {
     subtitle: string;
     body: string;
     abstract: string;
-    category: 'National' | 'International' | 'Sports' | 'Economy' | '';
+    category: 'National' | 'International' | 'Sports' | 'Economy';
 }

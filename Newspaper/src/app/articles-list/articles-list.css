@@ -1,0 +1,7 @@
+.input-valid{
+    border: 10px solid rgb(23, 95, 23);
+}
+
+.input-invalid{
+    border: 10px solid rgb(255, 255, 91);
+}

@@ -22,7 +22,7 @@ export class ArticlesList {
       subtitle: '',
       body: '',
       abstract: '',
-      category: '',
+      category: 'National',
     };
   }
 
