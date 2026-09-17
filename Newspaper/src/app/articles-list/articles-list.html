@@ -3,7 +3,9 @@
         <label> Title: </label>
         <input class="form-control" 
             type="text" 
-            required 
+            required
+            minlength="10"
+            maxlength="50"
             [(ngModel)]="article.title" 
             name="title" 
             #title="ngModel"
@@ -13,7 +15,9 @@
         <label> Subtitle: </label>
         <input class="form-control" 
             type="text" 
-            required 
+            required
+            minlength="10"
+            maxlength="50"
             [(ngModel)]="article.subtitle" 
             name="subtitle" 
             #subtitle="ngModel"
