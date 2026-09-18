@@ -9,7 +9,11 @@
             [(ngModel)]="article.title" 
             name="title" 
             #title="ngModel"
-            [ngClass]="title.valid ? 'input-valid': 'input-invalid'">
+            [ngClass]="{
+            'valid-field': title.valid,
+            'invalid-field': !title.valid,
+            'bg-danger': title.touched && title.invalid
+        }">
         <div class="alert alert-danger" *ngIf="title.touched && !title.valid">
             <div *ngIf="title.errors && title.errors['required']">
                 Title is required.
@@ -29,7 +33,11 @@
             [(ngModel)]="article.subtitle" 
             name="subtitle" 
             #subtitle="ngModel"
-            [ngClass]="subtitle.valid ? 'input-valid': 'input-invalid'">
+            [ngClass]="{
+            'valid-field': subtitle.valid,
+            'invalid-field': !subtitle.valid,
+            'bg-danger': subtitle.touched && subtitle.invalid
+        }">
         <div class="alert alert-danger" *ngIf="subtitle.touched && !subtitle.valid">
             <div *ngIf="subtitle.errors && subtitle.errors['required']">
                 Subtitle is required.
@@ -57,7 +65,11 @@
             [(ngModel)]="article.abstract" 
             name="abstract" 
             #abstract="ngModel"
-            [ngClass]="abstract.valid ? 'input-valid': 'input-invalid'">
+            [ngClass]="{
+            'valid-field': abstract.valid,
+            'invalid-field': !abstract.valid,
+            'bg-danger': abstract.touched && abstract.invalid
+        }">
         <div class="alert alert-danger" *ngIf="abstract.touched && !abstract.valid">
             <div *ngIf="abstract.errors && abstract.errors['required']">
                 Abstract is required.
