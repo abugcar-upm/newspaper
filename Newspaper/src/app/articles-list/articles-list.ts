@@ -3,9 +3,10 @@ import { FormsModule } from '@angular/forms';
 import {Article} from '../interfaces/article';
 import { NgClass } from '@angular/common';
 import { Highlight } from '../directives/highlight';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  imports: [FormsModule, NgClass, Highlight],
+  imports: [FormsModule, NgClass, Highlight, CommonModule],
   selector: 'app-articles-list',
   styleUrl: './articles-list.css',
   templateUrl: './articles-list.html',
