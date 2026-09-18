@@ -56,4 +56,10 @@ export class ArticlesList {
     };
   }
 
+  submitForm(): void {
+    this.addArticleToList(this.article);
+    this.resetForm();
+    window.alert("The article "+ this.article.title + " has been published");
+  }
+
 }
