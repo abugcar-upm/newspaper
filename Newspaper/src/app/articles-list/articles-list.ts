@@ -14,8 +14,15 @@ import { CommonModule } from '@angular/common';
 
 export class ArticlesList {
   article!: Article; // ask why we have to put the !
+  articlesList: Article[];
 
-  constructor() { }
+  constructor() {
+    this.articlesList = [
+      { title: "Article 1", subtitle: "Subtitle 1", body: "Body 1", abstract: "Abstract 1", category: "National" },
+      { title: "Article 2", subtitle: "Subtitle 2", body: "Body 2", abstract: "Abstract 2", category: "International" },
+      { title: "Article 3", subtitle: "Subtitle 3", body: "Body 3", abstract: "Abstract 3", category: "Sports" },
+    ];
+   }
 
   ngOnInit(): void {
     this.article = {
@@ -27,7 +34,7 @@ export class ArticlesList {
     };
   }
 
-  sendForm(): void {
-    window.alert("Received information: " + this.article.title + " " + this.article.subtitle + " " + this.article.body);
+  addArticleToList(article: Article): void {
+    this.articlesList.push(article);
   }
 }

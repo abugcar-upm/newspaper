@@ -1,4 +1,4 @@
-<form #studentForm="ngForm" (ngSubmit)="sendForm()">
+<form #studentForm="ngForm" (ngSubmit)="addArticleToList(article)">
     <div class="form-group">
         <label> Title: </label>
         <input appHighlight class="form-control" 
@@ -99,13 +99,14 @@
     </div>
 </form>
 
-<div class="article-preview">
-    <h2>Article preview</h2>
-    <p>
-        Title: {{article.title}} <br>
-        Subtitle: {{article.subtitle}} <br>
-        Body: {{article.body}} <br>
-        Abstract: {{article.abstract}} <br>
-        Category: {{article.category}} <br>
-    </p>
+<div>
+    <h3>
+        Articles List
+    </h3>
+
+    <ul class="list-group">
+        <li *ngFor="let article of articlesList" class="list-group-item">
+            {{article.title}}, {{article.subtitle}}, {{article.abstract}}
+        </li>
+    </ul>
 </div>
