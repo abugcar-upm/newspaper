@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
 export class ArticlesList {
   article!: Article; // ask why we have to put the !
   articlesList: Article[];
+  
 
   constructor() {
     this.articlesList = [
@@ -35,6 +36,14 @@ export class ArticlesList {
   }
 
   addArticleToList(article: Article): void {
-    this.articlesList.push(article);
+    let newArticle: Article = {
+      title: article.title,
+      subtitle: article.subtitle,
+      body: article.body,
+      abstract: article.abstract,
+      category: article.category,
+    };
+    this.articlesList.push(newArticle);
   }
+
 }
