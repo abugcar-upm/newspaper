@@ -46,4 +46,14 @@ export class ArticlesList {
     this.articlesList.push(newArticle);
   }
 
+  resetForm(): void {
+    this.article = {
+      title: '',
+      subtitle: '',
+      body: '',
+      abstract: '',
+      category: 'National',
+    };
+  }
+
 }

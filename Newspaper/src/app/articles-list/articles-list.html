@@ -1,4 +1,4 @@
-<form #studentForm="ngForm" (ngSubmit)="addArticleToList(article)">
+<form #articleForm="ngForm">
     <div class="form-group">
         <label> Title: </label>
         <input appHighlight class="form-control" 
@@ -99,7 +99,20 @@
     </div>
 </form>
 
-<button (click)="addArticleToList(article)" class="btn btn-primary btn-sm mr-1">Publish</button>
+<div class="text-right">
+    <button class="btn btn-primary btn-sm mr-1" 
+        type="submit" 
+        [disabled]="!articleForm.form.valid"
+        (click)="addArticleToList(article)">   
+        Publish
+    </button>
+    &nbsp;
+    <button class="btn btn-primary btn-sm mr-1" 
+        type="button" 
+        (click)="resetForm()">            
+        Reset form
+    </button>
+</div>
 
 <div>
     <h3>
