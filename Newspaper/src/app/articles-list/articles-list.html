@@ -82,6 +82,7 @@
     <div class="form-group">
         <label> Category: </label>
         <select appHighlight class="form-control" 
+            required
             [(ngModel)]="article.category" 
             name="category" 
             #category="ngModel"
@@ -107,7 +108,7 @@
         &nbsp;
         <button class="btn btn-primary btn-sm mr-1" 
             type="button" 
-            (click)="resetForm()">            
+            (click)="articleForm.reset()">            
             Reset
         </button>
     </div>

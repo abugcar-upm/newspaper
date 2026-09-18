@@ -4,6 +4,7 @@ import {Article} from '../interfaces/article';
 import { NgClass } from '@angular/common';
 import { Highlight } from '../directives/highlight';
 import { CommonModule } from '@angular/common';
+import { ViewChild } from '@angular/core';
 
 @Component({
   imports: [FormsModule, NgClass, Highlight, CommonModule],
@@ -15,7 +16,7 @@ import { CommonModule } from '@angular/common';
 export class ArticlesList {
   article!: Article; // ask why we have to put the !
   articlesList: Article[];
-  
+  @ViewChild('articleForm') articleForm: any;
 
   constructor() {
     this.articlesList = [
@@ -46,20 +47,10 @@ export class ArticlesList {
     this.articlesList.push(newArticle);
   }
 
-  resetForm(): void {
-    this.article = {
-      title: '',
-      subtitle: '',
-      body: '',
-      abstract: '',
-      category: 'National',
-    };
-  }
-
   submitForm(): void {
-    this.addArticleToList(this.article);
-    this.resetForm();
     window.alert("The article "+ this.article.title + " has been published");
+    this.addArticleToList(this.article);
+    this.articleForm.resetForm();
   }
 
 }
