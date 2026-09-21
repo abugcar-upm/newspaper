@@ -9,7 +9,7 @@ export class Highlight {
 
   @HostListener('focus')
   onFocus() {
-    this.highlight('yellow');
+    this.highlight('lightcyan');
   }
 @HostListener('blur')
 onBlur() {
